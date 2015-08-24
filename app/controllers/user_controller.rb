@@ -358,6 +358,8 @@ class UserController < ApplicationController
       else
         flash[:error] = t "user.confirm_email.unknown_token"
       end
+    else
+      redirect_to root_path # user confirm_email should not exist
     end
   end
 
